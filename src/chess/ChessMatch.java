@@ -123,8 +123,8 @@ public class ChessMatch {
 		if(promoted == null) {
 			throw new IllegalAccessError("there is no piece to be promoted");
 		}
-		if(!type.equals("B") && type.equals("N") && type.equals("R") && type.equals("Q")) {
-			throw new IllegalAccessError("Invalid type for promtion");
+		if(!type.equals("B") && !type.equals("N") && !type.equals("R") && !type.equals("Q")) {
+			return promoted;
 		}
 		Position pos = promoted.getChessPosition().toPosition();
 		Piece p = board.removePiece(pos);
